@@ -8,6 +8,7 @@ public class BallScript : MonoBehaviour
     [Header("Game Settings")]
     [SerializeField] private float speed;
     [SerializeField] private float RoundSpeedMultiplyer;
+    [SerializeField] private float MaxSpeed;
 
     void Start()
     {
@@ -18,12 +19,21 @@ public class BallScript : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        if (rb.velocity.magnitude > MaxSpeed)
+        {
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity, MaxSpeed);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
         speed = -speed;
+        
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // Change the Score TypeShit Nigga
     }
 
     // -- Back At It Again

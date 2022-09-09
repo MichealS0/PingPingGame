@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Goal_Trigger_Right
+  - Goal_Trigger_Left
+  - Right_Pong
+  - Left_Pong
   layers:
   - Default
   - TransparentFX
